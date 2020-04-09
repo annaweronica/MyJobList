@@ -1,0 +1,19 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+	{% for job in jobs %}
+	    {{job.job_title}}
+	    {{job.company_id}}
+	    {{job.job_description}}
+        {{job.company_description}}
+	    {{job.url}}
+	{% endfor %}
+
+</body>
+
+</html>
