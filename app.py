@@ -25,10 +25,17 @@ mongo = PyMongo(app)
 
 @app.route('/')
 # function with a decorator which includes route to that function
-@app.route('/get_jobs')
-def get_jobs():
+@app.route('/get_home')
+def get_home():
+    print("home page")
+    return render_template("index.html", jobs=mongo.db.jobs.find())
+
+
+# view job details page
+@app.route('/get_jobs/<job_id>')
+def get_jobs(job_id):
     print("some job")
-    return render_template("jobs.html", jobs=mongo.db.jobs.find())
+    return render_template("view-job.html", jobs=mongo.db.jobs.find_one({"_id": ObjectId(job_id)}))
 
 
 @app.route('/import_data')
