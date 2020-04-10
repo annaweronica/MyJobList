@@ -1,22 +1,10 @@
 <h1>Home page</h1>
 
 {% extends 'base.html' %}
-
-<!--single display of a job-->
 {% block content %}
         {% for job in jobs %}
         {{job.job_title}}
         {{job.company_id}}
-        <div class="view-details-button">
-        <a class="button" href="{{url_for('import_data')}}">View job details</a>
-
-       
-        </div>
+    
         {% endfor %}
 {% endblock %}
-
-
-
-<!--add a button after each job-->
-        <!--add view details button line 11-12-->
-        <!--<a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>-->

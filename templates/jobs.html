@@ -1,0 +1,10 @@
+<p>View details </p>
+{% block content %}
+    {% for job in jobs %}
+    {{job.job_title}}
+    {{job.company_id}}
+    {{job.job_description}}
+    {{job.company_description}}
+    {{job.url}}
+    {% endfor %}
+{% endblock %}

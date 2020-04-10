@@ -8,10 +8,8 @@ if path.exists("env.py"):
     import env
 
 
-
 # instance of Flask / Flask app and we store it in the app variable
 app = Flask(__name__)
-
 
 
 app.config["MONGO_DBNNAME"] = "MyJobList"
@@ -35,19 +33,19 @@ def get_home():
 @app.route('/get_jobs/<job_id>')
 def get_jobs(job_id):
     print("some job")
-    return render_template("view-job.html", jobs=mongo.db.jobs.find_one({"_id": ObjectId(job_id)}))
+    return render_template("jobs.html", jobs=mongo.db.jobs.find_one({"_id": ObjectId(job_id)}))
 
 
 @app.route('/import_data')
 def import_data():
     csvfile = open('data/dbExcel-ex.csv', 'r')
-    reader = csv.DictReader( csvfile )
-    header= ["job_title", "company_id", "job_description", "company_description", "url"]
+    reader = csv.DictReader(csvfile)
+    header = ["job_title", "company_id", "job_description", "company_description", "url"]
 
     for each in reader:
-        row={}
+        row = {}
         for field in header:
-            row[field]=each[field]
+            row[field] = each[field]
 
         mongo.db.jobs.insert_one(row)
     return "hello Wrold"
