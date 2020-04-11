@@ -39,7 +39,8 @@ def get_jobs(job_id):
 # add job function
 @app.route('/add_job')
 def add_job():
-    return render_template("addjob.html", )
+    return render_template("addjob.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
