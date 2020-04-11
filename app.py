@@ -3,8 +3,7 @@ import csv
 from flask import Flask, render_template, request, redirect, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from os import path
-if path.exists("env.py"):
+if os.path.exists("env.py"):
     import env
 
 
@@ -13,7 +12,7 @@ app = Flask(__name__)
 
 
 app.config["MONGO_DBNNAME"] = "MyJobList"
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config["MONGO_URI"] = "mongodb+srv://anna13:Aster1381@cluster0-rfwzk.mongodb.net/MyJobList?retryWrites=true&w=majority"
 
 
 # an instance of PyMongo and add app into that with constructor method
@@ -40,6 +39,21 @@ def get_jobs(job_id):
 @app.route('/add_job')
 def add_job():
     return render_template("addjob.html")
+
+
+@app.route('/insert_job', methods=["POST"])
+def insert_job():
+    requirements = request.form.get("requirements").splitlines()
+    job = {
+        "job_title": request.form.get("job_title"),
+        "company_id": request.form.get("company_id"),
+        "job_description": request.form.get("job_description"),
+        "requirements": requirements,
+        "company_description": request.get("company_description"),
+        "url": request.form.get("url")
+    }
+    jobs = mongo.db.jobs.insert_one(job)
+    return redirect(url_for("get_jobs", jobs=jobs))
 
 
 if __name__ == "__main__":

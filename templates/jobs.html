@@ -1,34 +1,37 @@
 {% extends 'base.html' %}
 <h1>View details </h1>
 <div class="container-fluid">
-<div class="row">
-{% block content %}
-    
-    {{jobs.job_title}}
-    </div>
-    <hr>
-    <div class="row">
-    {{jobs.company_id}}
-    </div>
-    <hr>
-    <div class="row">
-    {{jobs.job_description}}
-    </div>
-    <hr>
-    <div class="row">
-    {{jobs.requirements}}
-    </div>
-    <hr>
-    <div class="row">
-    {{jobs.company_description}}
-    </div>
-    <hr>
-    <div class="row">
-             <a class="btn btn-outline-secondary" type="button" href="{{jobs.url}}" target="_blank">Apply</a>
+	<div class="row">
+		{% block content %}
 
-    </div>
-    
-  
-{% endblock %}
+		{{jobs.job_title}}
+	</div>
+	<hr>
+	<div class="row">
+		{{jobs.company_id}}
+	</div>
+	<hr>
+	<div class="row">
+		{{jobs.job_description}}
+	</div>
+	<hr>
+	<div class="row">
+		<ul>
+			{% for requirement in jobs.requirements %}
+			<li>{{ requirement }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<hr>
+	<div class="row">
+		{{jobs.company_description}}
+	</div>
+	<hr>
+	<div class="row">
+		<a class="btn btn-outline-secondary" type="button" href="{{jobs.url}}" target="_blank">Apply</a>
+	</div>
+
+
+	{% endblock %}
 
 </div>
