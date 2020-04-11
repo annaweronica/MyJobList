@@ -1,10 +1,21 @@
 <h1>Home page</h1>
-
 {% extends 'base.html' %}
+
+<div class="fluid-container">
+   <div class="row">
 {% block content %}
         {% for job in jobs %}
+        <div class="col-sm-4">
         {{job.job_title}}
+        </div>
+        <div class="col-sm-4">
         {{job.company_id}}
-    
+        </div>
+        <div class="col-sm-4">
+         <a class="btn btn-outline-secondary" type="button" href="{{url_for('get_jobs', job_id=job._id)}}">View job details</a>
+        
+    </div>
         {% endfor %}
 {% endblock %}
+    </div>
+</div>      

@@ -36,20 +36,10 @@ def get_jobs(job_id):
     return render_template("jobs.html", jobs=mongo.db.jobs.find_one({"_id": ObjectId(job_id)}))
 
 
-@app.route('/import_data')
-def import_data():
-    csvfile = open('data/dbExcel-ex.csv', 'r')
-    reader = csv.DictReader(csvfile)
-    header = ["job_title", "company_id", "job_description", "company_description", "url"]
-
-    for each in reader:
-        row = {}
-        for field in header:
-            row[field] = each[field]
-
-        mongo.db.jobs.insert_one(row)
-    return "hello Wrold"
-
+# add job function
+@app.route('/add_job')
+def add_job():
+    return render_template("addjob.html", )
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
