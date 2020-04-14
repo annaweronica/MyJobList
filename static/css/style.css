@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Zeyada|Press+Start+2P&display=swap:100,200,300,400,500,600,700');
+
+html, body {
+  height: 100%;
+}
+
+body{
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: 	#303030;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-image{
+    background:url({{ url_for('static', filename='images/header-bg.png')}})
+}
+
+/*------------------------------------------------------footer*/
+

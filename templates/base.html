@@ -20,17 +20,21 @@
   </button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-item nav-link active" href="{{ url_for('get_home')}}">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link active" href="{{ url_for('get_home')}}">Home
+						<span class="sr-only">(current)</span></a>
 					<a class="nav-item nav-link" href="{{ url_for('add_job')}}">Post a job</a>
-    </div>
-  </div>
- 
+				</div>
+			</div>
 	</nav>
+    <div class="container">
+   
+    </div>
+
 	<div class="container">
 		{% block content %} {% endblock %}
 	</div>
-    
 
+	
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -1,62 +1,45 @@
 {% extends "base.html" %} {% block content %}
 <h4>Edit job</h4>
-<form action="/insert_job" method="POST" class="col s12">
+<form action="{{ url_for('insert_job')}}" method="POST" class="col s12">
     <div class="form-group">
-        <label for="formGroupExampleInput">JOB TITLE</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" name="job_title" required placeholder="">
+        <label for="jobTitle">JOB TITLE</label>
+        <input type="text" class="form-job-input" id="job-title" name="job_title" required placeholder="">
     </div>
     <div class="form-group">
-        <label for="formGroupExampleInput2">NAME OF THE COMPANY</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" name="company_id" required placeholder="">
+        <label for="nameOfTheCompany">NAME OF THE COMPANY</label>
+        <input type="text" class="form-job-input" id="company-id" name="company_id" required placeholder="">
     </div>
     <div class="form-group">
-        <label for="formGroupExampleInput">ABOUT THE JOB</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" name="job_description" required placeholder="">
+        <label for="aboutTheJob">ABOUT THE JOB</label>
+        <textarea type="input" rows="5" class="form-job-input" id="job-description" name="job_description" required placeholder=""></textarea>
+    </div>
+    <div class="group-requirements" id="requirements">
+        <label for="requirements">REQUIREMENTS</label>
+        <input type="text" class="form-requirement" name="requirements" placeholder="1.">
+        <input type="text" class="form-requirement" name="requirements" placeholder="2.">
+        <input type="text" class="form-requirement" name="requirements" placeholder="3.">
+        <input type="text" class="form-requirement" name="requirements" placeholder="4.">
+        <input type="text" class="form-requirement" name="requirements" placeholder="5.">
+        <input type="text" class="form-requirement" name="requirements" placeholder="6.">
     </div>
     <div class="form-group">
-        <label for="formGroupExampleInput2">REQUIREMENTS</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" name="requirements" placeholder="1.">
-        <input type="text" class="form-control" id="formGroupExampleInput2" name="requirements" placeholder="2.">
-        <input type="text" class="form-control" id="formGroupExampleInput2" name="requirements" placeholder="3.">
-        <input type="text" class="form-control" id="formGroupExampleInput2" name="requirements" placeholder="4.">
-        <input type="text" class="form-control" id="formGroupExampleInput2" name="requirements" placeholder="5.">
-        <input type="text" class="form-control" id="formGroupExampleInput2" name="requirements" placeholder="6.">
+        <label for="companyDescription">DESCRIPTION OF THE COMPANY</label>
+        <textarea type="input" rows="5" class="form-job-input" id="company-description" name="company_description" placeholder=""></textarea>
     </div>
     <div class="form-group">
-        <label for="formGroupExampleInput2">DESCRIPTION OF THE COMPANY</label>
-        <!--it should be texearea-->
-        <input type="text" class="form-control" id="formGroupExampleInput2" name="company_description" placeholder="">
+        <label for="jobLink">LINK TO ORIGINAL JOB POST</label>
+        <input type="text" class="form-job-inputl" id="job-link" name="url" required placeholder="">
     </div>
-    <div class="form-group">
-        <label for="formGroupExampleInput2">LINK TO ORIGINAL JOB POST</label>
-        <!--it should be texearea-->
-        <input type="text" class="form-control" id="formGroupExampleInput2" name="url" required placeholder="">
+    <div class="row">
+    <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">RE-POST A JOB</button>
     </div>
-    
-    <div class="form-group row">
-        <div class="col-sm-4">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck1" formaction="{{ url_for('edit_job')}}">
-                <label class="form-check-label" for="gridCheck1">
-                    Update
-                </label>
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck2">
-                <label class="form-check-label" for="gridCheck2">
-                    Delete
-                </label>
-            </div>
-        </div>
-
-       
-            <div class="col-sm-4">
-                <button type="submit" class="btn btn-primary">POST A JOB</button>
-            </div>
-        
+    <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">CANCEL</button>
+    </div>
+    <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">DELETE</button>
+    </div>
     </div>
 </form>
 

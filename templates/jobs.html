@@ -2,12 +2,12 @@
 <h1>View details </h1>
 <div class="container-fluid">
 	<div class="row">
-    <div class="col-sm-12">
-		{% block content %}
+		<div class="col-sm-12">
+			{% block content %}
 
-		{{jobs.job_title}}
+			{{jobs.job_title}}
+		</div>
 	</div>
-    </div>
 	<hr>
 	<div class="row">
 		{{jobs.company_id}}
@@ -30,7 +30,15 @@
 	</div>
 	<hr>
 	<div class="row">
-		<a class="btn btn-outline-secondary" type="button" href="{{jobs.url}}" target="_blank">Apply</a>
+		<div class="col-sm-3">
+			<a class="btn btn-outline-secondary" type="button" href="{{jobs.url}}" target="_blank">Apply</a>
+		</div>
+        <div class="col-sm-3">
+			<a class="btn btn-outline-secondary" type="button" href="{{ url_for('edit_job', job_id=jobs._id)}}">Update</a>
+		</div>
+        <div class="col-sm-3">
+			<a class="btn btn-outline-secondary" type="button" href="{{ url_for('delete_job', job_id=jobs._id)}}">Delete</a>
+		</div>
 	</div>
 
 
