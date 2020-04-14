@@ -48,12 +48,12 @@ def insert_job():
         "job_title": request.form.get("job_title"),
         "company_id": request.form.get("company_id"),
         "job_description": request.form.get("job_description"),
-        "requirements": requirements,
-        "company_description": request.get("company_description"),
+        "requirements": request.form.getlist("requirements"),
+        "company_description": request.form.get("company_description"),
         "url": request.form.get("url")
     }
     jobs = mongo.db.jobs.insert_one(job)
-    return redirect(url_for("get_jobs", jobs=jobs))
+    return redirect(url_for("get_jobs", job_id=jobs.inserted_id))
 
 
 if __name__ == "__main__":
