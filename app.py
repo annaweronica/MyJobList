@@ -56,6 +56,12 @@ def insert_job():
     return redirect(url_for("get_jobs", job_id=jobs.inserted_id))
 
 
+@app.route('/edit_job/<job_id>')
+def edit_job(job_id):
+    the_job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
+    return render_template('editjob.html', job=the_job)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
             # convert port into integer
