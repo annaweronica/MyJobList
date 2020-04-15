@@ -58,8 +58,12 @@ def insert_job():
 
 @app.route('/edit_job/<job_id>')
 def edit_job(job_id):
+    jobs = mongo.db.jobs
     the_job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
     return render_template('editjob.html', job=the_job)
+
+
+   
 
 
 @app.route('/delete_job/<job_id>')

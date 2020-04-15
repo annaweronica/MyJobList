@@ -2,11 +2,11 @@
 
 <div class="container">
 	<div class="hero-image ">
-{% block content %}
+		{% block content %}
 
 		<h1>TECH Jobs in Stockholm</h1>
 		<img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="hero-image" }}>
-        
+
 
 
 </div>
@@ -14,7 +14,7 @@
 
 	<div class="fluid-container">
 		<div class="row">
-			
+
 			{% for job in jobs %}
 			<div class="col-sm-4">
 				{{job.job_title}}
@@ -26,10 +26,11 @@
 				<a class="btn btn-outline-secondary" type="button" href="{{url_for('get_jobs', job_id=job._id)}}">View
 					job details</a>
 			</div>
+			<hr>
 			{% endfor %}
 			{% endblock %}
 
 		</div>
-<hr>
+
 
 	</div>
