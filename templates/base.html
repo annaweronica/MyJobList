@@ -12,7 +12,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="{{ url_for('get_home')}}">
-			<img src="{{ url_for('static', filename='images/logo/logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+			<img src="{{ url_for('static', filename='images/logo/logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="logo">
     Job hunt
   </a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,15 +26,21 @@
 				</div>
 			</div>
 	</nav>
-    <div class="container">
-   
-    </div>
-
 	<div class="container">
-		{% block content %} {% endblock %}
+		<div class="hero-image ">
+			{% block content %}
+
+		
+
+
+		</div>
 	</div>
 
-	
+	<div class="container">
+		 {% endblock %}
+	</div>
+
+
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

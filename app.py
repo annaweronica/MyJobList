@@ -62,11 +62,6 @@ def edit_job(job_id):
     return render_template('editjob.html', job=the_job)
 
 
-# @app.route('/delete_job/<job_id>')
-# def delete_job(job_id):
-#     mongo.db.jobs.remove({'_id': ObjectId(job_id)})
-#     return redirect(url_for('get_jobs'))
-
 @app.route('/delete_job/<job_id>')
 def delete_job(job_id):
     mongo.db.jobs.remove({'_id': ObjectId(job_id)})
