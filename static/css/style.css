@@ -2,6 +2,7 @@
 
 html, body {
   height: 100%;
+ 
 }
 
 body{
@@ -12,14 +13,16 @@ body{
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    
 }
 
 .hero-image {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    
 }
 
 /*------------------------------------------------------footer*/
+
 

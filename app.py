@@ -38,6 +38,9 @@ def get_jobs(job_id):
 # add job function
 @app.route('/add_job')
 def add_job():
+    # query to list of companies
+    # update retun line 42 
+    # return render_template("jobs.html", jobs=mongo.db.jobs.find_one({"_id": ObjectId(job_id)}))
     return render_template("addjob.html")
 
 
@@ -54,16 +57,29 @@ def insert_job():
     }
     jobs = mongo.db.jobs.insert_one(job)
     return redirect(url_for("get_jobs", job_id=jobs.inserted_id))
+    # check is the company is in the db
+    # if donest exis then creat new one
+    # if exists then display info
 
 
-@app.route('/edit_job/<job_id>')
+@app.route('/edit_job/<job_id>', methods=["POST", "GET"])
 def edit_job(job_id):
-    jobs = mongo.db.jobs
-    the_job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
-    return render_template('editjob.html', job=the_job)
-
-
-   
+    if request.method == "GET":
+        jobs = mongo.db.jobs
+        the_job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
+        return render_template('editjob.html', job=the_job)
+    else:
+        jobs = mongo.db.jobs
+        jobs.update( {'_id': ObjectId(job_id)},
+    {
+        "job_title": request.form.get("job_title"),
+        "company_id": request.form.get("company_id"),
+        "job_description": request.form.get("job_description"),
+        "requirements": request.form.getlist("requirements"),
+        "company_description": request.form.get("company_description"),
+        "url": request.form.get("url")
+    })
+        return redirect(url_for('get_home'))
 
 
 @app.route('/delete_job/<job_id>')
