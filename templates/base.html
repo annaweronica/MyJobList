@@ -4,67 +4,86 @@
 <head>
 	<title>Job</title>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="{{ url_for('get_home')}}">
+<!--Navbar-->
+	<nav class="level">
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="{{ url_for('get_home')}}">
 			<img src="{{ url_for('static', filename='images/logo/logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="logo">
-    Job hunt
+    TECH Jobs
   </a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-item nav-link active" href="{{ url_for('get_home')}}">Home
-						<span class="sr-only">(current)</span></a>
-					<a class="nav-item nav-link" href="{{ url_for('add_job')}}">Post a job</a>
-				</div>
-			</div>
-	</nav>
+  </p>
+  <p class="level-item has-text-centered">
+  <a class="nav-item nav-link active" href="{{ url_for('get_home')}}">
+    <img src="{{ url_for('static', filename='/images/logo/stockholm.png') }}" alt="main-logo" style="height: 30px;"> 
+    </a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="{{ url_for('add_job')}}">Post a job</a>
+  </p>
+</nav>
+<!--End of Navbar-->
+
 	<div class="container">
-		
-			{% block content %}
-		    {% endblock %}
+		{% block content %}
+		{% endblock %}
 	</div>
 
-    <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <iframe width="560" height="290" src="https://www.youtube.com/embed/0XFbARsvb48" frameborder="0"
-							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
-              </div>
-              
-            </div>
-          </div>
+    <!--Footer-->
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<iframe width="560" height="290" src="https://www.youtube.com/embed/0XFbARsvb48" frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="content has-text-centered">
+				<p>
+					<strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
+					licensed
+					<a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+					is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+				</p>
+			</div>
+		</footer>
+        <!--End of footer-->
+
+        
+		<!--
           <div class="footer-copyright">
             <div class="container">
             © 2014 Copyright Text
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
           </div>
-        </footer>
+        </footer>-->
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-	</script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-	</script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-	</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+		</script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+		</script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+		</script>
+		<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
 </body>
 
