@@ -7,60 +7,28 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">-->
-
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
-  <div class="container">
-    <a href="{{ url_for('get_home')}}" class="navbar-brand">
-      <!-- Logo Image 
-      <img src="{{ url_for('static', filename='images/logo/logo.png') }}" width="30" height="30" class="d-inline-block align-middle mr-2" alt="logo"> -->
-      <!-- Logo Text -->
-      <span class="font-weight-bold">Tech jobs STOCKHOLM</span>
-    </a>
 
-    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
-
-    <div id="navbarSupportedContent" class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="{{ url_for('get_home')}}" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
-        <li class="nav-item"><a href="{{ url_for('add_job')}}" class="nav-link">Post a job</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-
-
-
-
-
-
-	<!--Navbar
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-		<div class="container">
-			<a class="navbar-brand nav-item js-scroll-trigger" href="{{ url_for('get_home')}}">TECH Jobs</a>
-			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav text-uppercase ml-auto">
-					<li class="nav-item">
-						<a class="nav-link nav-item js-scroll-trigger" href="{{ url_for('get_home')}}">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link nav-item js-scroll-trigger" href="{{ url_for('add_job')}}">Post a job</a>
-					</li>
-				</ul>
-			</div>
+	<nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+		<a href="{{ url_for('get_home')}}" class="navbar-brand">
+			<!-- Logo Text -->
+			<span class="font-weight-bold">Tech jobs STOCKHOLM</span>
+		</a>
+		<button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+		<div id="navbarSupportedContent" class="collapse navbar-collapse">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active"><a href="{{ url_for('get_home')}}" class="nav-link">Home
+						<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a href="{{ url_for('add_job')}}" class="nav-link">Post a job</a></li>
+			</ul>
 		</div>
-	</nav>-->
-	<!--End of Navbar-->
+
+	</nav>
+
+
 
 	<div class="container-fluid">
 
@@ -68,10 +36,6 @@
 		{% endblock %}
 
 	</div>
-
-
-
-
 
 	<script src="/static/myscript.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">

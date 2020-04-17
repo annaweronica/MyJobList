@@ -1,48 +1,65 @@
-{% extends 'base.html' %}
-{% block content %}
-<div class="container-fluid">
-	<div class="row no-gutter">
+{% extends 'base.html' %} {% block content %}
 
-		<div class="col-md-8 col-lg-6">
-			<div class="login d-flex align-items-center py-5">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-9 col-lg-8 mx-auto">
-							<h3 class="login-heading mb-4">TECH JOBS in Stockholm</h3>
-							<div class="section">
-								<table id="left-half" class="table">
-									
-									{% for job in jobs %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+  <div class="row">
+  <div class="col-sm-6">
+   <!-- Services -->
+                            <section class="page-section" id="services">
+                                <div class="container">
 
-									<tbody>
-										<tr>
-											<td>{{job.job_title}}</td>
-											<td>{{job.company_id}}</td>
-											<td><a class="btn btn-outline-secondary"
-													href="{{url_for('get_jobs', job_id=job._id)}}">View
-													job details</a></td>
-										</tr>
-									</tbody>
-                                    
-									{% endfor %}
-								</table>
-							</div>
+                                    <div class="row text-center">
+                                        <div class="col-md-4">
+
+                                            <h4 class="service-heading">Apply for a job</h4>
+                                        </div>
+                                        <div class="col-md-4">
+
+                                            <h4 class="service-heading">Post a job</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+  </div>
+    <!--<h1 class="display-4">Fluid jumbotron</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>-->
+    <div class="col-sm-6 hero-img">
+      <!--<img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="hero-image">-->
+    </div>
+  </div>
+  </div>
+</div>
 
 
 
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="d-none d-md-flex col-md-4 col-lg-6 bg-image">
-			<img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="hero-image"></div>
-		</div>
+<!--<section class="hero">
+	<div class="hero-inner">
+		
+		<h1>Stockholm</h1>
+		<h2>Look at this website and bask in its amazing glory!</h2>
+		<a href="https://example.com/" class="btn">Go ahead...</a>
+        <img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="hero-image">
 	</div>
+</section>-->
+
+<div class="section">
+	<table class="table border-top my-3">
+
+		{% for job in jobs %}
+
+		<tbody>
+			<tr>
+				<td>{{job.job_title}}</td>
+				<td>{{job.company_id}}</td>
+				<td><a class="btn btn-outline-secondary" href="{{url_for('get_jobs', job_id=job._id)}}">View
+												 details</a></td>
+			</tr>
+		</tbody>
+
+		{% endfor %}
+	</table>
+</div>
+
+
 
 {% endblock %}
-
-
-
-
