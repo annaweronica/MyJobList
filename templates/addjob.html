@@ -1,5 +1,7 @@
 {% extends "base.html" %} {% block content %}
-<h4>Add job</h4>
+<h1>Add job</h1>
+
+
 <form action="{{ url_for('insert_job')}}" method="POST" class="col s12">
     <div class="form-group">
         <label for="jobTitle">JOB TITLE</label>
@@ -21,6 +23,10 @@
         <input type="text" class="form-requirement" name="requirements" placeholder="4.">
         <input type="text" class="form-requirement" name="requirements" placeholder="5.">
         <input type="text" class="form-requirement" name="requirements" placeholder="6.">
+        <input type="text" class="form-requirement" name="requirements" placeholder="7.">
+        <input type="text" class="form-requirement" name="requirements" placeholder="8.">
+        <input type="text" class="form-requirement" name="requirements" placeholder="9.">
+        <input type="text" class="form-requirement" name="requirements" placeholder="10.">
     </div>
     <div class="form-group">
         <label for="companyDescription">DESCRIPTION OF THE COMPANY</label>
@@ -28,10 +34,9 @@
     </div>
     <div class="form-group">
         <label for="jobLink">LINK TO ORIGINAL JOB POST</label>
-        <!--it should be texearea-->
-        <input type="text" class="form-job-input" id="job-link" name="url" required placeholder="">
+        <input type="url" class="form-job-input" id="job-link" name="url" required placeholder="">
+        
     </div>
-    
 
         <div class="row">
             <div class="col-sm-4">
@@ -44,5 +49,7 @@
         </div>
    
 </form>
+
+
 
 {% endblock %}

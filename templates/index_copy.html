@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+	<div class="hero-inner ">
+
+		<!--<img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="hero-image">-->
+	</div>
+</section>
+
+<div class="container">
+	<table id="left-half" class="table">
+		<h1>Left side</h1>
+		{% for job in jobs %}
+
+		<tbody>
+			<tr>
+				<td>{{job.job_title}}</td>
+				<td>{{job.company_id}}</td>
+				<td><a class="btn btn-outline-secondary" href="{{url_for('get_jobs', job_id=job._id)}}">View
+						job details</a></td>
+			</tr>
+		</tbody>
+		{% endfor %}
+	</table>
+</div>
+{% endblock %}

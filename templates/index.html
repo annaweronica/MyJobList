@@ -1,32 +1,48 @@
 {% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+	<div class="row no-gutter">
+
+		<div class="col-md-8 col-lg-6">
+			<div class="login d-flex align-items-center py-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-9 col-lg-8 mx-auto">
+							<h3 class="login-heading mb-4">TECH JOBS in Stockholm</h3>
+							<div class="section">
+								<table id="left-half" class="table">
+									
+									{% for job in jobs %}
+
+									<tbody>
+										<tr>
+											<td>{{job.job_title}}</td>
+											<td>{{job.company_id}}</td>
+											<td><a class="btn btn-outline-secondary"
+													href="{{url_for('get_jobs', job_id=job._id)}}">View
+													job details</a></td>
+										</tr>
+									</tbody>
+                                    
+									{% endfor %}
+								</table>
+							</div>
 
 
-	
-		{% block content %}
-    <div class="hero-image ">
-		
-		<img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="hero-image">
-    </div>
 
 
-	<div class="fluid-container">
-		<div class="row">
-
-			{% for job in jobs %}
-			<div class="col-sm-4">
-				{{job.job_title}}
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-sm-4">
-				{{job.company_id}}
-			</div>
-			<div class="col-sm-4">
-				<a class="btn btn-outline-secondary" href="{{url_for('get_jobs', job_id=job._id)}}">View
-					job details</a>
-			</div>
-			<br>
-			{% endfor %}
-			
-
+		</div>
+		<div class="d-none d-md-flex col-md-4 col-lg-6 bg-image">
+			<img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="hero-image"></div>
 		</div>
 	</div>
-            {% endblock %}
+
+{% endblock %}
+
+
+
+

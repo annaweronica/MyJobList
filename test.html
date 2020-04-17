@@ -1,0 +1,22 @@
+<table class="table">
+{% for job in jobs %}
+  <thead>
+    <tr>
+      
+      <th scope="col">Job title</th>
+      <th scope="col">Company name</th>
+      <th scope="col">Button</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>{{job.job_title}}</td>
+      <td>{{job.company_id}}</td>
+      <td><a class="btn btn-outline-secondary" href="{{url_for('get_jobs', job_id=job._id)}}">View
+				job details</a></td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+<br>

@@ -7,7 +7,7 @@ USER STORIES:
 - As a employer I want to update already posted job ad.
 - As a employer I want to delete posted job ad.
 
- 
+ - https://codetheweb.blog/2017/12/07/fullscreen-image-hero/
 --------
 
 Happy coding!
