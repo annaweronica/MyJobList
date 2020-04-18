@@ -13,34 +13,43 @@ body{
     font-family: "Electrolize", sans-serif;
     font-size: 1rem;
     color: 	#303030;
-    /*overflow-x: hidden;
-    display: flex;
-    flex-direction: column;*/
 }
 
-/*-----------------------img*/
+/*------------------------------img*/
 
 .hero-img img{
     width: 100%;
 }
 
-.navbar-nav li:hover {
+/*---------------------------navbar*/
+
+.navbar-brand span:hover{
+    color: #4CBCAD;
+}
+
+
+.nav-item a:hover{
     text-decoration: none;
-    padding: 0;
+    color: #4CBCAD;
 }
 
 /*-------------------------jumbotron*/
 
 .jumbotron{
     background-size: center;
-    background-position: auto;
+    background-position: cover;
     background-color: white;
-    /*background-image:url("../images/header-bg.png");*/
     height:auto;
     background-repeat: no-repeat;
-    /*border:1px solid #ff6a00*/
+    border:1px solid #4CBCAD;
+    margin: 0;
+    padding: 0;
+    padding-top: 1rem;
+}
+
+.header-section{
     margin-bottom: 0;
-    
+    padding-bottom: 0;
 }
 
 .header-services{
@@ -52,11 +61,17 @@ body{
     color: #4CBCAD;
 }
 
+/*-------------------------job list*/
+
+.table-section{
+    margin: 0;
+    padding: 0;
+}
+
 .button-view-job{
     text-align: right;
     float: right;
 }
-/*-------------------------job list*/
 
 .job-item{
     text-align: right;
@@ -64,21 +79,11 @@ body{
 }
 
 .view-job-offer{
-    margin: 0;
-    padding: 0;
+   
+    margin-right: 2rem;;
+    margin-left: 2rem;
 }
+
 .description{
     text-align: justify;
-}
-/*----------------model confirmation*/
-
-.customHr {
-    width: 95%
-    font-size: 1px;
-    color: rgba(0, 0, 0, 0);
-    line-height: 1px;
-
-    background-color: grey;
-    margin-top: -6px;
-    margin-bottom: 10px;
 }

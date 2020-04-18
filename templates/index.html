@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="jumbotron">
-	<div class="row">
+	<div class="row header-section">
 		<div class="col-sm-6 header-services">
-			<a class="service-heading-link" href="{{ url_for('add_job')}}"><i class="fas fa-code"></i> Post a job</a>
+			<a class="service-heading-link" href="{{ url_for('add_job')}}"><i class="fas fa-stream"></i> Post a job</a>
             <h6 class="service-heading"> - or- </h6>
 			<h4 class="service-heading"> Apply for a job <i class="fas fa-level-down-alt"></i> </h4>
 		</div>
@@ -12,7 +12,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="section">
+	<div class="table-section">
 		<table class="table border-top my-3">
 			{% for job in jobs %}
 			<tbody>
