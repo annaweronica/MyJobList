@@ -1,7 +1,7 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
+
 <h1>Add job</h1>
-
-
 <form action="{{ url_for('insert_job')}}" method="POST" class="col s12">
     <div class="form-group">
         <label for="jobTitle">JOB TITLE</label>
@@ -42,14 +42,6 @@
             <div class="col-sm-4">
                 <button  type="submit" class="btn btn-primary">POST A JOB</button>
             </div>
-            <div class="col-sm-4">
-                <button class="btn btn-primary">CANCEL</button>
-            </div>
-
         </div>
-   
 </form>
-
-
-
 {% endblock %}

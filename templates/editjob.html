@@ -1,7 +1,6 @@
 {% extends "base.html" %} {% block content %}
 
 <h4>Edit job</h4>
-
 <form action="{{ url_for('edit_job', job_id=job._id)}}" method="POST" class="col s12">
 	<div class="form-group">
 		<label for="jobTitle">JOB TITLE</label>
@@ -34,12 +33,11 @@
 							<button type="submit" class="btn btn-primary">RE-POST A JOB</button>
 						</div>
 						<div class="col-sm-4">
-							<button onclick="return false;" class="btn btn-primary">CANCEL</button>
+							<button class="btn btn-primary" href="{{url_for('get_home')}}">CANCEL</button>
 						</div>
 						<div class="col-sm-4">
 							<button type="submit" class="btn btn-primary">DELETE</button>
 						</div>
 					</div>
 </form>
-
 {% endblock %}
