@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Electrolize|Zeyada|Press+Start+2P&display=swap:100,200,300,400,500,600,700');
-
-/*div{
-    border: solid black 2px;
-}*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Electrolize|Press+Start+2P&display=swap:100,200,300,400,500,600,700');
 
 html {
     height: 100%;  
@@ -36,12 +32,10 @@ body{
 /*-------------------------jumbotron*/
 
 .jumbotron{
-    background-size: center;
-    background-position: cover;
+    background-size: cover;
     background-color: white;
     height:auto;
     background-repeat: no-repeat;
-    
     margin: 0;
     padding: 0;
     padding-top: 1rem;
@@ -91,5 +85,3 @@ body{
 }
 
 /*--------------------------------confirmation model*/
-
-

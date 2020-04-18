@@ -1,5 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <h1>Add job</h1>
 <form action="{{ url_for('insert_job')}}" method="POST" class="col s12">
@@ -15,9 +14,9 @@
         <label for="aboutTheJob">ABOUT THE JOB</label>
         <textarea rows="6" class="form-job-input" id="aboutTheJob" name="job_description" required placeholder=""></textarea>
     </div>
-    <div class="group-requirements" id="requirements">
+    <div class="group-requirements">
         <label for="requirements">REQUIREMENTS</label>
-        <input type="text" class="form-requirement" name="requirements" placeholder="1.">
+        <input type="text" class="form-requirement" id="requirements" name="requirements" placeholder="1.">
         <input type="text" class="form-requirement" name="requirements" placeholder="2.">
         <input type="text" class="form-requirement" name="requirements" placeholder="3.">
         <input type="text" class="form-requirement" name="requirements" placeholder="4.">
@@ -35,13 +34,13 @@
     <div class="form-group">
         <label for="jobLink">LINK TO ORIGINAL JOB POST</label>
         <input type="url" class="form-job-input" id="jobLink" name="url" required placeholder="">
-        
+
     </div>
 
-        <div class="row">
-            <div class="col-sm-4">
-                <button  type="submit" class="btn btn-primary">POST A JOB</button>
-            </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <button type="submit" class="btn btn-primary">POST A JOB</button>
         </div>
+    </div>
 </form>
 {% endblock %}
