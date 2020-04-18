@@ -2,9 +2,10 @@
 
 <div class="jumbotron">
 	<div class="row">
-		<div class="col-sm-6">
-			<h4 class="service-heading">Apply for a job</h4>
-			<h4 class="service-heading">Post a job</h4>
+		<div class="col-sm-6 header-services">
+			<a class="service-heading-link" href="{{ url_for('add_job')}}"><i class="fas fa-code"></i> Post a job</a>
+            <h6 class="service-heading"> - or- </h6>
+			<h4 class="service-heading"> Apply for a job <i class="fas fa-level-down-alt"></i> </h4>
 		</div>
 		<div class="col-sm-6 hero-img">
 			<img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="hero-image">
@@ -18,7 +19,7 @@
 				<tr>
 					<td>{{job.job_title}}</td>
 					<td>{{job.company_id}}</td>
-					<td><a class="btn btn-outline-secondary" href="{{url_for('get_jobs', job_id=job._id)}}">View
+					<td><a class="btn btn-outline-secondary button-view-job" href="{{url_for('get_jobs', job_id=job._id)}}">View
 							details</a></td>
 				</tr>
 			</tbody>

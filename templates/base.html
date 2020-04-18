@@ -6,31 +6,33 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 </head>
 
 <body>
-	<section class="navnar">
+	<div class="navnar">
 		<nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
 			<a href="{{ url_for('get_home')}}" class="navbar-brand">
 
-				<span class="font-weight-bold">Tech jobs STOCKHOLM</span>
+				<span id="nav-title" class="font-weight-bold">Tech jobs STOCKHOLM</span>
 			</a>
 			<button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
 			<div id="navbarSupportedContent" class="collapse navbar-collapse">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="{{ url_for('get_home')}}" class="nav-link">Home
+					<li class="nav-item"><a href="{{ url_for('get_home')}}" class="nav-link">Home
 						</a></li>
 					<li class="nav-item"><a href="{{ url_for('add_job')}}" class="nav-link">Post a job</a></li>
 				</ul>
 			</div>
 		</nav>
-	</section>
-	<section class="container">
+	</div>
+	<div class="container">
 		{% block content %}
 		{% endblock %}
-	</section>
+	</div>
 
 	<script src="/static/myscript.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
