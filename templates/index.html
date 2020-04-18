@@ -1,31 +1,28 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="jumbotron">
-
-	<div class="row header-section">
-    
-		<div class="col-sm-6 header-services">
-			<a class="service-heading-link" href="{{ url_for('add_job')}}"><i class="fas fa-stream"></i> Post a job</a>
-           
-			<h4 class="service-heading"> Apply for a job <i class="fas fa-level-down-alt"></i> </h4>
-		</div>
-		<div class="col-sm-6 hero-img">
-			<img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="hero-image">
-			</div>
-		</div>
-	</div>
-	<div class="table-section">
-		<table class="table border-top my-3">
-			{% for job in jobs %}
-			<tbody>
-				<tr>
-					<td>{{job.job_title}}</td>
-					<td>{{job.company_id}}</td>
-					<td><a class="btn btn-outline-secondary button-view-job" href="{{url_for('get_jobs', job_id=job._id)}}">View
+    <div class="row header-section">
+        <div class="col-sm-6 header-services">
+            <a class="service-heading-link" href="{{ url_for('add_job')}}"><i class="fas fa-stream"></i> Post a job</a>
+            <h4 class="service-heading"> Apply for a job <i class="fas fa-level-down-alt"></i> </h4>
+        </div>
+        <div class="col-sm-6 hero-img">
+            <img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="hero-image">
+        </div>
+    </div>
+</div>
+<div class="table-section">
+    <table class="table border-top my-3">
+        {% for job in jobs %}
+        <tbody>
+            <tr>
+                <td>{{job.job_title}}</td>
+                <td>{{job.company_id}}</td>
+                <td><a class="btn btn-outline-secondary button-view-job" href="{{url_for('get_jobs', job_id=job._id)}}">View
 							details</a></td>
-				</tr>
-			</tbody>
-			{% endfor %}
-		</table>
-	</div>
-	{% endblock %}
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

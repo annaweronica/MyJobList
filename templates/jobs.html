@@ -34,8 +34,24 @@
             <a class="btn btn-outline-secondary" href="{{ url_for('edit_job', job_id=jobs._id)}}">Update</a>
         </div>
         <div class="col-sm-3">
-            <a class="btn btn-outline-secondary" href="{{ url_for('delete_job', job_id=jobs._id)}}">Delete</a>
+            <button class="btn btn-outline-secondary" onclick="document.getElementById('id01').style.display='block'">Delete</button>
         </div>
+    </div>
+    <!-- model confirmation-->
+    <div id="id01" class="modal">
+        <form class="modal-content" action="/action_page.php">
+            <div class="container">
+                <h1>Delete Account</h1>
+                <p>Are you sure you want to delete job post?</p>
+
+                <div class="clearfix">
+                    <a class="btn btn-outline-secondary" href="{{ url_for('get_jobs', job_id=jobs._id)}}">CANCEL</a>
+
+                    <a class="btn btn-outline-secondary" href="{{ url_for('delete_job', job_id=jobs._id)}}">Delete</a>
+
+                </div>
+            </div>
+        </form>
     </div>
 </section>
 {% endblock %}

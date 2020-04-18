@@ -1,10 +1,4 @@
 
-
-
-# UX
-
-
-
 USER STORIES:
 
 - As a potential employee I want to be able to read job offers at home website.
@@ -17,6 +11,7 @@ USER STORIES:
  - 
  - https://bootstrapious.com/p/bootstrap-navbar-with-logo
  - https://bootstrapious.com/p/bootstrap-sticky-footer
+ - https://www.w3schools.com/howto/howto_css_delete_modal.asp
 --------
 
 Happy coding!

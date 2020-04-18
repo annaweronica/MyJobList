@@ -32,10 +32,7 @@
             <button type="submit" class="btn btn-primary">RE-POST A JOB</button>
         </div>
         <div class="col-sm-4">
-            <a class="btn btn-primary" href="{{url_for('get_home')}}">CANCEL</a>
-        </div>
-        <div class="col-sm-4">
-            <button type="submit" class="btn btn-primary">DELETE</button>
+            <a class="btn btn-primary" href="{{url_for('get_jobs', job_id=job._id)}}">CANCEL</a>
         </div>
     </div>
 </form>
