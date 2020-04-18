@@ -1,3 +1,10 @@
+
+
+
+# UX
+
+
+
 USER STORIES:
 
 - As a potential employee I want to be able to read job offers at home website.
@@ -7,7 +14,9 @@ USER STORIES:
 - As a employer I want to update already posted job ad.
 - As a employer I want to delete posted job ad.
 
- - https://codetheweb.blog/2017/12/07/fullscreen-image-hero/
+ - 
+ - https://bootstrapious.com/p/bootstrap-navbar-with-logo
+ - https://bootstrapious.com/p/bootstrap-sticky-footer
 --------
 
 Happy coding!

@@ -41,7 +41,7 @@ body{
     background-color: white;
     height:auto;
     background-repeat: no-repeat;
-    border:1px solid #4CBCAD;
+    
     margin: 0;
     padding: 0;
     padding-top: 1rem;
@@ -50,10 +50,12 @@ body{
 .header-section{
     margin-bottom: 0;
     padding-bottom: 0;
+    border:1px solid #4CBCAD;
 }
 
 .header-services{
     text-align: center;
+    margin-top: 2.2rem;
 }
 
 .header-services a{
@@ -87,3 +89,7 @@ body{
 .description{
     text-align: justify;
 }
+
+/*--------------------------------confirmation model*/
+
+

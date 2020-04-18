@@ -1,5 +1,4 @@
 import os
-import csv
 from flask import Flask, render_template, request, redirect, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -7,12 +6,11 @@ if os.path.exists("env.py"):
     import env
 
 
-# instance of Flask / Flask app and we store it in the app variable
 app = Flask(__name__)
 
 
 app.config["MONGO_DBNNAME"] = "MyJobList"
-app.config["MONGO_URI"] = "mongodb+srv://anna13:Aster1381@cluster0-rfwzk.mongodb.net/MyJobList?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 
 # an instance of PyMongo and add app into that with constructor method
@@ -32,15 +30,14 @@ def get_home():
 @app.route('/get_jobs/<job_id>')
 def get_jobs(job_id):
     print("some job")
-    return render_template("jobs.html", jobs=mongo.db.jobs.find_one({"_id": ObjectId(job_id)}))
+    return render_template("jobs.html",
+                           jobs=mongo.db.jobs.find_one({"_id":
+                                                       ObjectId(job_id)}))
 
 
 # add job function
 @app.route('/add_job')
 def add_job():
-    # query to list of companies
-    # update retun line 42 
-    # return render_template("jobs.html", jobs=mongo.db.jobs.find_one({"_id": ObjectId(job_id)}))
     return render_template("addjob.html")
 
 
@@ -70,15 +67,15 @@ def edit_job(job_id):
         return render_template('editjob.html', job=the_job)
     else:
         jobs = mongo.db.jobs
-        jobs.update( {'_id': ObjectId(job_id)},
-    {
-        "job_title": request.form.get("job_title"),
-        "company_id": request.form.get("company_id"),
-        "job_description": request.form.get("job_description"),
-        "requirements": request.form.getlist("requirements"),
-        "company_description": request.form.get("company_description"),
-        "url": request.form.get("url")
-    })
+        jobs.update({'_id': ObjectId(job_id)},
+                    {
+            "job_title": request.form.get("job_title"),
+            "company_id": request.form.get("company_id"),
+            "job_description": request.form.get("job_description"),
+            "requirements": request.form.getlist("requirements"),
+            "company_description": request.form.get("company_description"),
+            "url": request.form.get("url")
+                    })
         return redirect(url_for('get_home'))
 
 
