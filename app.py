@@ -81,4 +81,4 @@ if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             # it allows to changes to be picked up auto in the browser
-            debug=True)
+            debug=False)
