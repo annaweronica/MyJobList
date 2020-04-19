@@ -66,13 +66,14 @@ To enable post and browse job offers for job and/or employees seekers.
 
 **Wireframes**
 
-![Desktop, iPad, mobile view](../wireframes/all-wireframes.pdf)
+![1. Main view - Desktop, iPad](../wireframes/main-page.png)<br>
+![2. Create - Desktop, iPad](../wireframes/create.png)<br>
+![3. Read - Desktop, iPad](../wireframes/edit.png)<br>
+![4. Update - Desktop, iPad](../wireframes/read.png)<br>
+![5. Delete - Desktop, iPad](../wireframes/delete.png)<br>
+![all iPhone view](../wireframes/iPhone-view.png)<br>
 
-
-
-
-
-USER STORIES:
+**USER STORIES:**
 
 - As a potential employee I want to be able to read job offers at home website.
 - As a potential employee I want to be able to click on view details to see job description.
@@ -85,6 +86,8 @@ USER STORIES:
  - https://bootstrapious.com/p/bootstrap-navbar-with-logo
  - https://bootstrapious.com/p/bootstrap-sticky-footer
  - https://www.w3schools.com/howto/howto_css_delete_modal.asp
+
+
 --------
 
-Happy coding!
+Enjoy!
