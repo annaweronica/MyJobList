@@ -66,12 +66,12 @@ To enable post and browse job offers for job and/or employees seekers.
 
 **Wireframes**
 
-![1. Main view - Desktop, iPad](../wireframes/main-page.png)<br>
-![2. Create - Desktop, iPad](../wireframes/create.png)<br>
-![3. Read - Desktop, iPad](../wireframes/edit.png)<br>
-![4. Update - Desktop, iPad](../wireframes/read.png)<br>
-![5. Delete - Desktop, iPad](../wireframes/delete.png)<br>
-![all iPhone view](../wireframes/iPhone-view.png)<br>
+![1. Main view - Desktop, iPad](static/wireframes/main-page.png)<br>
+![2. Create - Desktop, iPad](static/wireframes/create.png)<br>
+![3. Read - Desktop, iPad](static/wireframes/edit.png)<br>
+![4. Update - Desktop, iPad](static/wireframes/read.png)<br>
+![5. Delete - Desktop, iPad](static/wireframes/delete.png)<br>
+![all iPhone view](static/wireframes/iPhone-view.png)<br>
 
 **USER STORIES:**
 
