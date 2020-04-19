@@ -8,8 +8,6 @@
 
 # UX
 
----
-
 **Target audience:**<br>
 The job seeker who is interested in job advertisements.
 The employee seeker who wants to post a job advertisement.
@@ -119,7 +117,7 @@ To enable post and browse job offers for job and/or employees seekers.
 - Heroku
 
 **Database**
-- Atlas MongoDB
+- Atlas MongoDB (one collection: jobs)
 
 **Frameworks:**
 - Flask
@@ -181,9 +179,9 @@ To enable post and browse job offers for job and/or employees seekers.
 
 **All User Stories and features were tested on all size devices and no bugs were spoted**
 
-#DEPLOYMENT
+# DEPLOYMENT
 
-##HEROKU
+**HEROKU**
 
 1. Make an account on [heroku](https://dashboard.heroku.com/)
 2. Create an application
@@ -197,7 +195,7 @@ To enable post and browse job offers for job and/or employees seekers.
 > In the section *Setting* you must specify **Confing Vars**<br>
 > ![config vars](static/wireframes/config-vars.png)
 
-##GitHub
+**GitHub**
 
 The [repository](https://github.com/annaweronica/MyJobList) is hosted on github with one master branch.
 Commends below were made as the work incrementation was made progressively and prevented from any code incrementation loss.
@@ -206,14 +204,15 @@ Commends below were made as the work incrementation was made progressively and p
 - git commit -m "name"
 - git push
 
-#CREDITS
+
+# CREDITS
 
 **External resouces supporting me during my work:**
 - https://bootstrapious.com/p/bootstrap-navbar-with-logo
 - https://bootstrapious.com/p/bootstrap-sticky-footer
 - https://www.w3schools.com/howto/howto_css_delete_modal.asp
 
-#Huge thank you!
+**Huge thank you!**
 
 - Kevin, Xav! for patience and clarifying and explaining and teaching!
 - Aaron for guidance. 
